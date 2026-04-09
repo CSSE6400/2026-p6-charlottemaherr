@@ -57,3 +57,8 @@ resource "aws_lb_listener" "taskoverflow" {
         target_group_arn = aws_lb_target_group.taskoverflow.arn
     }
 }
+
+output "taskoverflow_dns_name" {
+    value = aws_lb.taskoverflow.dns_name
+    description = "DNS name of the TaskOverflow load balancer"
+}
